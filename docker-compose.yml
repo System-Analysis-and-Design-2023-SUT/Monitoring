@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+    monitoring_monitor-net: 
+        external: true
+
 volumes:
     prometheus_data: {}
     grafana_data: {}
