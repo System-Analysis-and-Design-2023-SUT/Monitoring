@@ -32,7 +32,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == "SAD-Project"
+          - node.hostname == SAD-Project
 
   alertmanager:
     image: prom/alertmanager:v0.20.0
@@ -51,7 +51,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == "SAD-Project"
+          - node.hostname == SAD-Project
 
   nodeexporter:
     image: prom/node-exporter:v0.18.1
@@ -90,7 +90,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == "SAD-Project"
+          - node.hostname == SAD-Project
 
   grafana:
     image: grafana/grafana:6.7.2
@@ -111,7 +111,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == "SAD-Project"
+          - node.hostname == SAD-Project
 
   pushgateway:
     image: prom/pushgateway:v1.2.0
@@ -125,7 +125,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == "SAD-Project"
+          - node.hostname == SAD-Project
 
   caddy:
     image: stefanprodan/caddy
@@ -147,4 +147,4 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == "SAD-Project"
+          - node.hostname == SAD-Project
