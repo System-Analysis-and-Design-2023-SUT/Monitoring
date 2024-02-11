@@ -13,7 +13,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.17.1
     volumes:
-      - ./prometheus:/etc/prometheus
+      - /var/lib/docker/volumes/portainer_portainer_data/_data/compose/12/prometheus:/etc/prometheus
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -37,7 +37,7 @@ services:
   alertmanager:
     image: prom/alertmanager:v0.20.0
     volumes:
-      - ./alertmanager:/etc/alertmanager
+      - /var/lib/docker/volumes/portainer_portainer_data/_data/compose/12/alertmanager:/etc/alertmanager
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
@@ -96,7 +96,7 @@ services:
     image: grafana/grafana:6.7.2
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning:/etc/grafana/provisioning
+      - /var/lib/docker/volumes/portainer_portainer_data/_data/compose/12/grafana/provisioning:/etc/grafana/provisioning
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
@@ -135,7 +135,7 @@ services:
       - "9093:9093"
       - "9091:9091"
     volumes:
-      - ./caddy:/etc/caddy
+      - /var/lib/docker/volumes/portainer_portainer_data/_data/compose/12/caddy:/etc/caddy
     environment:
       - ADMIN_USER=${ADMIN_USER}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
