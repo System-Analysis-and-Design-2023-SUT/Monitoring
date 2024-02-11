@@ -2,8 +2,7 @@ version: '3'
 
 networks:
   monitor-net:
-    external:
-      name: sad-monitoring
+    driver: overlay
 
 volumes:
     prometheus_data: {}
