@@ -29,6 +29,10 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == "SAD-Project"
 
   alertmanager:
     image: prom/alertmanager:v0.20.0
@@ -44,6 +48,10 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == "SAD-Project"
 
   nodeexporter:
     image: prom/node-exporter:v0.18.1
@@ -79,6 +87,10 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == "SAD-Project"
 
   grafana:
     image: grafana/grafana:6.7.2
@@ -96,6 +108,10 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == "SAD-Project"
 
   pushgateway:
     image: prom/pushgateway:v1.2.0
@@ -106,6 +122,10 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == "SAD-Project"
 
   caddy:
     image: stefanprodan/caddy
@@ -124,3 +144,7 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == "SAD-Project"
