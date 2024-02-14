@@ -74,6 +74,10 @@ services:
       - monitoring_monitor-net
     labels:
       org.label-schema.group: "monitoring"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == SAD-Project
 
   grafana:
     image: grafana/grafana:6.7.2
