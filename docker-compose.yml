@@ -57,7 +57,7 @@ services:
 
   nodeexporter:
     image: prom/node-exporter:v0.18.1
-    hostname: node-exporter
+    hostname: nodeexporter
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
